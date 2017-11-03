@@ -1,0 +1,53 @@
+
+// preset form values if we receive a userdata object //
+- user = typeof(udata) != 'undefined' ? udata : { }
+// store the userId on the client side in a hidden input field //
+input(type='hidden', value= user._id)#userId
+
+#account-form-container.center-vertical
+	form(method="post")#account-form.form-horizontal.well
+		h2
+		h6#sub1 Please tell us a little about yourself.
+		hr
+		.form-group
+			label.control-label.col-sm-3 Name
+			.col-sm-9
+				input.form-control#name-tf(type='text', name='name', value= user.name)
+
+		.form-group
+			label.control-label.col-sm-3 Email
+			.col-sm-9
+				input.form-control#email-tf(type='text', name='email', value= user.email)
+		hr
+		h6#sub2
+		.form-group
+			label.control-label.col-sm-3 Username
+			.col-sm-9
+				input.form-control#user-tf(type='text', name='username', value= user.username).disabled
+
+		.form-group
+			label.control-label.col-sm-3 Password
+			.col-sm-9
+				input.form-control#pass-tf(type='password', name='password', value=user.username)
+        
+		
+		hr
+		.form-buttons
+			button(type='button')#account-form-btn1.btn.btn-default Login
+			button(type='submit')#account-form-btn2.btn.btn-primary Signup
+		.clearfix
+
+// display form errors in a custom modal window //
+
+include modals/form-errors
+
+link(rel="stylesheet", href="/css/style.css")
+link(rel="stylesheet", href='/vendor/jquery-2.2.3.min.js')
+link(rel="stylesheet", href='/vendor/jquery.form.min.js')
+link(rel="stylesheet", href='/vendor/bootstrap.min.css')
+link(rel="stylesheet", href='/vendor/bootstrap.min.css.map')
+link(rel="stylesheet", href='/vendor/bootstrap.min.js')
+
+link(rel="stylesheet", href='/js/views/signup.js')
+link(rel="stylesheet",href='/js/controllers/signupController.js')
+link(rel="stylesheet",href='/js/form-validators/accountValidator.js')

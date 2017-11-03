@@ -1,0 +1,46 @@
+
+html(lang="en")
+title= pageTitle
+link(rel="stylesheet", href="/css/style.css")
+script(type='text/javascript')
+if typeof(users)!==undefined && users!==null
+
+            block content
+
+            body
+            h1#listtext Current Users
+                table.col-xs-12
+                    tr
+                        th index
+                        th name
+                        th Username
+                        th email
+                        th Password
+                        th Id
+                        th Delete
+                        th Edit
+                        th file
+                    each user, index in users
+                        tr
+                            td= index
+                            td= user.name
+                            td= user.username
+                            td= user.email
+                            td= user.password
+                            td= user.id
+                            td  
+                                  form(method='POST', action='/delete/'+user.id)
+                                   button(type='submit') Delete
+                                   br
+                            td
+                              form(method='GET', action='/edit/'+user.id)
+                                   a(href='/edit')  
+                                    button(type='click' ) Edit
+                                    br
+                            td= user.filename        
+else
+   h2 user data not found 
+
+link(rel="stylesheet", href="/css/style.css")
+
+link(rel="stylesheet", href='/vendor/bootstrap.min.css')

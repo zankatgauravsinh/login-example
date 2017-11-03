@@ -1,0 +1,54 @@
+
+block content
+
+	#login.center-vertical
+		form.well(id='form-login', method='post')
+			h2 Hello!
+			h6 Please Login To Your Account
+			.form-group
+				label Username
+				input.form-control(type='text', id='user-tf', name='username')
+			.form-group
+				label Password
+				input.form-control(type='password', id='pass-tf', name='password')
+			.controls
+				button(type='button').btn.btn-default.button-rememember-me
+					span.glyphicon.glyphicon-unchecked.button-rememember-me-glyph
+					| Remember Me
+				button(type='submit').btn.btn-primary.button-sign-in
+					span.glyphicon.glyphicon-lock
+					| Sign In
+			.clearfix
+			hr
+			.btm-links
+				#forgot-password
+					a(href='#') Forgot Your Password?
+				#create-account
+					a(href='/signup') Create An Account
+			.clearfix
+
+	include modals/alert
+	include modals/lost-password
+
+
+
+	link(rel="stylesheet", href="/css/style.css")
+	link(rel="stylesheet", href='/vendor/jquery-2.2.3.min.js')
+	link(rel="stylesheet", href='/vendor/jquery.form.min.js')
+	link(rel="stylesheet", href='/vendor/bootstrap.min.css')
+	link(rel="stylesheet", href='/vendor/bootstrap.min.css.map')
+	link(rel="stylesheet", href='/vendor/bootstrap.min.js')
+
+	link(rel="stylesheet", href='/js/views/login.js')
+	link(rel="stylesheet",href='/js/controllers/loginController.js')
+	link(rel="stylesheet",href='/js/form-validators/loginValidator.js')
+	link(rel="stylesheet",href='/js/form-validators/emailValidator.js')
+
+
+
+
+
+
+	
+
+	
